@@ -68,7 +68,7 @@ app.listen(port, async () => {
 let responseToReturn;
 
 app.post("/generate", async (req, res) => {
-  chat = generativeModelPreview.startChat();
+  chat = await generativeModelPreview.startChat();
   const { prompt } = req.body;
   const { response } = await chat.sendMessage(prompt);
   // console.log(response.candidates[0]);
